@@ -1,0 +1,7 @@
+def save_summary(summary, output_path):
+    with open(output_path, "w", encoding="utf-8") as file:
+        file.write(summary)
+
+# Usage example:
+summary_output_path = "summaries/summary.txt"
+save_summary(summary, summary_output_path)
