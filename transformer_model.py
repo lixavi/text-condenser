@@ -6,7 +6,7 @@ class TransformerSummarizer:
         self.tokenizer = T5Tokenizer.from_pretrained(model_name)
 
     def summarize(self, text, max_length=150, min_length=40, length_penalty=2.0, num_beams=4):
-        input_ids = self.tokenizer.encode("summarize: " + text, return_tensors="pt", max_length=1024, truncation=True)
+        input_ids = self.tokenizer.encode("summarize: " + text, return_tensors="pt", max_length=1024, truncation=False)
         
         # Generate summary
         summary_ids = self.model.generate(input_ids, max_length=max_length, min_length=min_length, 
